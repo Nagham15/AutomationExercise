@@ -18,7 +18,7 @@ public class ContactUsPageTests extends BaseTest{
     }
     @Test(description = "Check Contact Us Form")
     public void contactUs(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickContactUs();
         assertTrue(CP.isGetInTouchTextVisible());
         CP.enterName("Nagham");

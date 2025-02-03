@@ -3,7 +3,6 @@ import Pages.LoginPage;
 import Pages.TestCasesPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -19,13 +18,13 @@ public class HomePageTests extends BaseTest{
     }
     @Test(description = "Check Contact Us Form")
     public void contactUs(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickContactUs();
 
     }
     @Test(description = "Check the functionality of logout button")
     public void logOutUser(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickOnSignUpAndLogin();
         LP.loginSteps("naghamabdelrahman15@gmail.com","1234567");
         assertTrue(HP.checkIfUserLoggedIn());
@@ -35,7 +34,7 @@ public class HomePageTests extends BaseTest{
     }
     @Test(description = "Verify test cases page is opened")
     public void testCasesOption(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickTestCases();
         assertEquals(TC.getTestCasesPageURL(),"https://automationexercise.com/test_cases");
     }

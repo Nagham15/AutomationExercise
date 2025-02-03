@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.File;
 import java.time.Duration;
 
 public class ContactUsPage {
@@ -43,7 +41,6 @@ public class ContactUsPage {
       driver.findElement(yourMessageField).sendKeys(message);
     }
     public void uploadFile(String filePath){
-       // String filePath=new File("src/test/files/Nagham-Abdelrahman-Testing-Engineer.pdf").getAbsolutePath();
         driver.findElement(chooseFile).sendKeys(filePath);
     }
     public void clickSubmitButton(){

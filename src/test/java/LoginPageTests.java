@@ -1,7 +1,6 @@
 import Pages.DeleteAccountPage;
 import Pages.HomePage;
 import Pages.LoginPage;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -19,7 +18,7 @@ public class LoginPageTests extends BaseTest{
     }
     @Test (priority = 1,description = "Login User with correct email and password")
     public void validLogin(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickOnSignUpAndLogin();
         assertTrue(LP.isLoginToYourAccountTextVisible());
         LP.loginSteps("naghamabdelrahman15@gmail.com","1234567");
@@ -32,7 +31,7 @@ public class LoginPageTests extends BaseTest{
     }
     @Test(priority = 2, description = "Login User with incorrect email and password")
     public void invalidLogin(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickOnSignUpAndLogin();
         assertTrue(LP.isLoginToYourAccountTextVisible());
         LP.loginSteps("nagham@gmail.com","1234567");
@@ -43,7 +42,7 @@ public class LoginPageTests extends BaseTest{
     }
     @Test(priority = 3,description = "Register User with existing email")
     public void singUpWithExistingEmail(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickOnSignUpAndLogin();
         assertTrue(LP.isNewUserSignupVisible());
         LP.signUpSteps("nagham","naghamabdelrahman15@gmail.com");

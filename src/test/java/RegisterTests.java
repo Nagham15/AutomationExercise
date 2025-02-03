@@ -22,7 +22,7 @@ public class RegisterTests extends BaseTest{
 
     @Test(priority = 1,description = "Register with valid data")
     public void registerUser(){
-        assertTrue(HP.isHomeIconVisible());
+        assertTrue(HP.isHomePageVisible());
         HP.clickOnSignUpAndLogin();
         assertTrue(LP.isNewUserSignupVisible());
         LP.signUpSteps("Nagham Abdelrahman","nagham125@gmail.com");

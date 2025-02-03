@@ -18,18 +18,19 @@ public class HomePage {
     }
 
     // TODO: define locators
-    private By homeIcon=By.xpath("//a[normalize-space()='Home']");
+    private By homeIcon=By.cssSelector("a[style='color: orange;']");
     private By signUpAndLoginButton =By.cssSelector("a[href='/login']");
     private By userLoggedIn=By.cssSelector(".fa.fa-user");
     private By deleteAccountButton =By.cssSelector("a[href='/delete_account']");
     private By logOutButton =By.cssSelector("a[href='/logout']");
     private By contactUsButton=By.cssSelector("a[href='/contact_us']");
     private By testCasesButton=By.cssSelector("a[href='/test_cases']");
+    private By productsButton=By.cssSelector("a[href='/products']");
 
 
 
     //TODO: define action methods
-    public boolean isHomeIconVisible(){
+    public boolean isHomePageVisible(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(homeIcon));
         return driver.findElement(homeIcon).isDisplayed();
     }
@@ -51,5 +52,8 @@ public class HomePage {
     }
     public void clickTestCases(){
         driver.findElement(testCasesButton).click();
+    }
+    public void clickProducts(){
+        driver.findElement(productsButton).click();
     }
 }
