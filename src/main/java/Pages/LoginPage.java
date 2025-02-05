@@ -31,15 +31,6 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(newUserSignupText));
         return driver.findElement(newUserSignupText).isDisplayed();
     }
-//    public void addUserName(String name){
-//        driver.findElement(userNameField).sendKeys(name);
-//    }
-//    public void addSignUpEmail(String email){
-//        driver.findElement(emailSignUpField).sendKeys(email);
-//    }
-//    public void clickSignUpButton(){
-//        driver.findElement(signUpButton).click();
-//    }
     public void signUpSteps(String name,String email){
         driver.findElement(userNameField).sendKeys(name);
         driver.findElement(emailSignUpField).sendKeys(email);
@@ -54,15 +45,6 @@ public class LoginPage {
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(loginButton).click();
     }
-//    public void addLoginEmail(String email){
-//        driver.findElement(emailLoginField).sendKeys(email);
-//    }
-//    public void addPassword(String password){
-//        driver.findElement(passwordField).sendKeys(password);
-//    }
-//    public void clickLoginButton(){
-//        driver.findElement(loginButton).click();
-//    }
     public boolean isValidationLoginMessageVisible(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(validationLoginMessage));
         return driver.findElement(validationLoginMessage).isDisplayed();

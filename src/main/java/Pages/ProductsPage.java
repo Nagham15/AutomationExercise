@@ -21,6 +21,10 @@ public class ProductsPage {
     private By allProductsText=By.xpath("//h2[normalize-space()='All Products']");
     private By listOfProducts=By.className("features_items");
     private By productOne=By.cssSelector("a[href='/product_details/1']");
+    private By searchField=By.id("search_product");
+    private By searchIcon=By.id("submit_search");
+    private By searchedProductsText=By.xpath("//h2[normalize-space()='Searched Products']");
+
 
     //TODO: define action methods
     public boolean isAllProductsTextVisible(){
@@ -33,6 +37,19 @@ public class ProductsPage {
     }
     public void clickViewProductForProductOne(){
         driver.findElement(productOne).click();
+    }
+    public void addProductNameToSearch(String productName){
+        driver.findElement(searchField).sendKeys(productName);
+    }
+    public void clickSearch(){
+        driver.findElement(searchIcon).click();
+    }
+    public boolean isSearchedProductsTextVisible(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(searchedProductsText));
+        return driver.findElement(searchedProductsText).isDisplayed();
+    }
+    public boolean isSearchedProductVisible(){
+        return driver.findElement(productOne).isDisplayed();
     }
 
 }

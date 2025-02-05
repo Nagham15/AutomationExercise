@@ -26,9 +26,6 @@ public class RegisterTests extends BaseTest{
         HP.clickOnSignUpAndLogin();
         assertTrue(LP.isNewUserSignupVisible());
         LP.signUpSteps("Nagham Abdelrahman","nagham125@gmail.com");
-//        LP.addUserName("Nagham Abdelrahman");
-//        LP.addSignUpEmail("nagham125@gmail.com");
-//        LP.clickSignUpButton();
         assertTrue(RP.isEnterAccountInformationVisible());
         RP.selectTitle();
         RP.addPassword("123456789");

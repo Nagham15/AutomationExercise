@@ -16,12 +16,12 @@ public class ProductsPageTests extends BaseTest{
        HP=new HomePage(driver);
        PP=new ProductsPage(driver);
        PD=new ProductDetailsPage(driver);
-    }
-    @Test(description = "Verify All Products and product detail page")
-    public void verifyProducts(){
         assertTrue(HP.isHomePageVisible(),"Home page is not visible");
         HP.clickProducts();
         assertTrue(PP.isAllProductsTextVisible(),"All products text is not visible");
+    }
+    @Test(description = "Verify All Products and product detail page")
+    public void verifyProducts(){
         assertTrue(PP.isProductListIsNotEmpty(), "Products list is empty!");
         PP.clickViewProductForProductOne();
         softAssert.assertTrue(PD.isProductNameDisplayed(),"Product name is not displayed");
@@ -31,8 +31,13 @@ public class ProductsPageTests extends BaseTest{
         softAssert. assertTrue(PD.isConditionDisplayed(),"Condition is not displayed");
         softAssert. assertTrue(PD.isBrandDisplayed(),"Brand is not displayed");
         softAssert.assertAll();
-
-
-
+    }
+    @Test(description = "Verify searching for a Product")
+    public void searchProduct(){
+        PP.addProductNameToSearch("Blue Top");
+        PP.clickSearch();
+        softAssert.assertTrue(PP.isSearchedProductsTextVisible(),"Searched products are not found");
+        softAssert.assertTrue(PP.isSearchedProductVisible(),"The searched product is not visible");
+        softAssert.assertAll();
     }
 }

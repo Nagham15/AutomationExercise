@@ -15,6 +15,7 @@ public class HomePageTests extends BaseTest{
       HP=new HomePage(driver);
       LP=new LoginPage(driver);
       TC=new TestCasesPage(driver);
+      assertTrue(HP.isHomePageVisible());
     }
     @Test(description = "Check Contact Us Form")
     public void contactUs(){
@@ -24,7 +25,6 @@ public class HomePageTests extends BaseTest{
     }
     @Test(description = "Check the functionality of logout button")
     public void logOutUser(){
-        assertTrue(HP.isHomePageVisible());
         HP.clickOnSignUpAndLogin();
         LP.loginSteps("naghamabdelrahman15@gmail.com","1234567");
         assertTrue(HP.checkIfUserLoggedIn());
@@ -34,7 +34,6 @@ public class HomePageTests extends BaseTest{
     }
     @Test(description = "Verify test cases page is opened")
     public void testCasesOption(){
-        assertTrue(HP.isHomePageVisible());
         HP.clickTestCases();
         assertEquals(TC.getTestCasesPageURL(),"https://automationexercise.com/test_cases");
     }
