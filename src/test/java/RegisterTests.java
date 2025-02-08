@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 
 public class RegisterTests extends BaseTest{
-    HomePage HP;
+
     LoginPage LP;
     RegisterPage RP;
     AccountCreatedPage AC;
@@ -13,17 +13,15 @@ public class RegisterTests extends BaseTest{
 
     @BeforeMethod
     public void preConditions(){
-       HP=new HomePage(driver);
-       LP=new LoginPage(driver);
-       RP=new RegisterPage(driver);
-       AC=new AccountCreatedPage(driver);
-       DA=new DeleteAccountPage(driver);
+        LP=new LoginPage(driver);
+        RP=new RegisterPage(driver);
+        AC=new AccountCreatedPage(driver);
+        DA=new DeleteAccountPage(driver);
+        HP.clickOnSignUpAndLogin();
     }
 
     @Test(priority = 1,description = "Register with valid data")
     public void registerUser(){
-        assertTrue(HP.isHomePageVisible());
-        HP.clickOnSignUpAndLogin();
         assertTrue(LP.isNewUserSignupVisible());
         LP.signUpSteps("Nagham Abdelrahman","nagham125@gmail.com");
         assertTrue(RP.isEnterAccountInformationVisible());

@@ -1,11 +1,8 @@
 package Pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class HomePage {
@@ -26,8 +23,11 @@ public class HomePage {
     private By contactUsButton=By.cssSelector("a[href='/contact_us']");
     private By testCasesButton=By.cssSelector("a[href='/test_cases']");
     private By productsButton=By.cssSelector("a[href='/products']");
+    private By subscriptionText=By.xpath("//h2[normalize-space()='Subscription']");
+    private By emailField=By.id("susbscribe_email");
+    private By arrowButton=By.cssSelector(".fa.fa-arrow-circle-o-right");
 
-
+    private By cartButton=By.cssSelector("a[href='/view_cart']");
 
     //TODO: define action methods
     public boolean isHomePageVisible(){
@@ -55,5 +55,16 @@ public class HomePage {
     }
     public void clickProducts(){
         driver.findElement(productsButton).click();
+    }
+    public boolean isSubscriptionTextVisible(){
+       return driver.findElement(subscriptionText).isDisplayed();
+    }
+    public void subscriptionSteps(String email){
+        driver.findElement(emailField).sendKeys(email);
+        driver.findElement(arrowButton).click();
+    }
+
+    public void clickCart(){
+        driver.findElement(cartButton).click();
     }
 }

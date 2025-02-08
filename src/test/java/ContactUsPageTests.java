@@ -1,5 +1,4 @@
 import Pages.ContactUsPage;
-import Pages.HomePage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -8,13 +7,13 @@ import java.io.File;
 import static org.testng.Assert.assertTrue;
 
 public class ContactUsPageTests extends BaseTest{
-    HomePage HP;
+
     ContactUsPage CP;
     String filePath=new File("src/test/files/Nagham-Abdelrahman-Testing-Engineer.pdf").getAbsolutePath();
     @BeforeMethod
     public void preConditions(){
-      HP=new HomePage(driver);
-      CP=new ContactUsPage(driver);
+
+        CP=new ContactUsPage(driver);
     }
     @Test(description = "Check Contact Us Form")
     public void contactUs(){

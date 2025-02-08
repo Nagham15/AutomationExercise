@@ -1,5 +1,5 @@
 import Pages.DeleteAccountPage;
-import Pages.HomePage;
+
 import Pages.LoginPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -7,15 +7,13 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 
 public class LoginPageTests extends BaseTest{
-    HomePage HP;
+
     LoginPage LP;
     DeleteAccountPage DP;
     @BeforeMethod
     public void preConditions(){
-       HP=new HomePage(driver);
-       LP=new LoginPage(driver);
-       DP=new DeleteAccountPage(driver);
-        assertTrue(HP.isHomePageVisible());
+        LP=new LoginPage(driver);
+        DP=new DeleteAccountPage(driver);
         HP.clickOnSignUpAndLogin();
     }
     @Test (priority = 1,description = "Login User with correct email and password")

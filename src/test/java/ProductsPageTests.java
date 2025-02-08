@@ -1,4 +1,3 @@
-import Pages.HomePage;
 import Pages.ProductDetailsPage;
 import Pages.ProductsPage;
 import org.testng.annotations.BeforeMethod;
@@ -7,17 +6,15 @@ import org.testng.asserts.SoftAssert;
 import static org.testng.Assert.assertTrue;
 
 public class ProductsPageTests extends BaseTest{
-    HomePage HP;
+
     ProductsPage PP;
     ProductDetailsPage PD;
     SoftAssert softAssert=new SoftAssert();
     @BeforeMethod
     public void preConditions(){
-       HP=new HomePage(driver);
        PP=new ProductsPage(driver);
        PD=new ProductDetailsPage(driver);
-        assertTrue(HP.isHomePageVisible(),"Home page is not visible");
-        HP.clickProducts();
+       HP.clickProducts();
         assertTrue(PP.isAllProductsTextVisible(),"All products text is not visible");
     }
     @Test(description = "Verify All Products and product detail page")

@@ -7,15 +7,14 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class HomePageTests extends BaseTest{
-    HomePage HP;
+
     LoginPage LP;
     TestCasesPage TC;
     @BeforeMethod
     public void preConditions(){
-      HP=new HomePage(driver);
-      LP=new LoginPage(driver);
+        LP=new LoginPage(driver);
       TC=new TestCasesPage(driver);
-      assertTrue(HP.isHomePageVisible());
+
     }
     @Test(description = "Check Contact Us Form")
     public void contactUs(){
@@ -37,4 +36,12 @@ public class HomePageTests extends BaseTest{
         HP.clickTestCases();
         assertEquals(TC.getTestCasesPageURL(),"https://automationexercise.com/test_cases");
     }
+    @Test(description = "Verify Subscription in home page")
+    public void subscription(){
+        assertTrue(HP.isSubscriptionTextVisible());
+        HP.subscriptionSteps("naghamabdelrahman11@gmail.com");
+
+
+    }
+
 }
