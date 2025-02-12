@@ -28,7 +28,7 @@ public class CartPage {
         return driver.findElement(subscriptionText).isDisplayed();
     }
     public void subscriptionSteps(String email){
-        driver.findElement(emailField).sendKeys(email);
+         driver.findElement(emailField).sendKeys(email);
         driver.findElement(arrowButton).click();
     }
     public boolean isProductOneDisplayed(){
